@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kilole Hotel | The Height of Hospitality</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #c5a059; --dark: #1c1917; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: #fcfaf8; color: var(--dark); margin: 0; }
+        h1, h2, h3, h4, .serif { font-family: 'Playfair Display', serif; }
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .nav-scrolled { background: white !important; padding: 1rem 2.5rem !important; box-shadow: 0 4px 20px rgba(0,0,0,0.08); color: black !important; }
+        .nav-scrolled .nav-link { color: black !important; }
+        .img-container { overflow: hidden; }
+        .img-container img { transition: transform 1.5s ease; }
+        .img-container:hover img { transform: scale(1.05); }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <nav id="navbar" class="fixed w-full z-[100] px-10 py-8 flex justify-between items-center transition-all duration-500 text-white">
+        <div class="flex items-center gap-4">
+            <img src="img/logo.JPG" alt="Kilole Logo" class="h-12 w-auto object-contain">
+            <div class="text-2xl tracking-[0.3em] font-light hidden md:block">KILOLE</div>
+        </div>
+        <div class="hidden lg:flex space-x-8 text-[9px] uppercase tracking-[0.2em] font-bold">
+            <a href="#home" class="nav-link">The Estate</a>
+            <a href="#about" class="nav-link">Our Gardens</a>
+            <a href="#rooms" class="nav-link">Residences</a>
+            <a href="#conference" class="nav-link">Events</a>
+            <a href="#dining" class="nav-link">Dining</a>
+            <a href="#contact" class="nav-link">Booking</a>
+        </div>
+        <a href="#contact" class="border border-white/40 px-8 py-3 text-[10px] uppercase tracking-widest hover:bg-gold hover:border-gold transition-all">Inquire</a>
+    </nav>
+
+    <section id="home" class="relative h-screen flex items-center justify-center">
+        <img src="img/front pic.JPG" class="absolute inset-0 w-full h-full object-cover brightness-[0.45]">
+        <div class="relative text-center text-white px-4">
+            <span class="uppercase tracking-[0.8em] text-[10px] mb-8 block reveal">Now Open</span>
+            <h1 class="text-6xl md:text-[120px] mb-8 italic font-light leading-none reveal">Pure Elegance.</h1>
+            <p class="text-[10px] uppercase tracking-[0.4em] reveal">Kilole Hotel & Residences</p>
+        </div>
+    </section>
+
+    <section id="about" class="py-40 px-10 bg-white">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
+            <div class="reveal">
+                <span class="text-gold text-xs font-bold tracking-widest uppercase mb-4 block">The Atmosphere</span>
+                <h2 class="text-5xl md:text-7xl mb-10 italic">A Breath of <br>Fresh Air.</h2>
+                <p class="text-stone-500 text-lg leading-[2.2] font-light mb-8">
+                    Our expansive green areas are the heart of Kilole Hotel. Designed as a botanical sanctuary within the city, these gardens offer guests a tranquil space to walk, meditate, or enjoy an afternoon tea amidst lush surroundings.
+                </p>
+            </div>
+            <div class="img-container reveal shadow-2xl">
+                <img src="img/green area.JPG" alt="Gardens" class="w-full">
+            </div>
+        </div>
+    </section>
+
+    <section id="rooms" class="py-40 bg-stone-50 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-24 reveal">
+                <h2 class="text-6xl italic">Stay in Style</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 mb-20">
+                <div class="reveal img-container">
+                    <img src="img/room 2.JPG" class="w-full aspect-[4/5] object-cover">
+                    <div class="py-8 bg-white px-6 shadow-sm">
+                        <h3 class="text-2xl italic mb-2">The Executive Suite</h3>
+                        <p class="text-stone-400 text-sm">Sophisticated design meets modern comfort.</p>
+                    </div>
+                </div>
+                <div class="reveal img-container" style="transition-delay: 200ms;">
+                    <img src="img/room 3.JPG" class="w-full aspect-[4/5] object-cover">
+                    <div class="py-8 bg-white px-6 shadow-sm">
+                        <h3 class="text-2xl italic mb-2">Deluxe Twin Room</h3>
+                        <p class="text-stone-400 text-sm">Perfect for families and long-term stays.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-40 bg-white px-10">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+            <div class="reveal img-container order-2 md:order-1">
+                <img src="img/bathroom.JPG" class="w-full shadow-2xl">
+            </div>
+            <div class="reveal order-1 md:order-2">
+                <h2 class="text-5xl italic mb-8">Refined Details</h2>
+                <p class="text-stone-500 leading-loose mb-10">Luxury is found in the details. Our bathrooms feature premium stone finishes and spa-inspired amenities, providing a sanctuary of rejuvenation after a long day.</p>
+                <div class="w-20 h-px bg-gold"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="conference" class="py-40 bg-[#121212] text-white px-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-5 reveal">
+                    <h2 class="text-6xl italic mb-8">Corporate <br>Mastery.</h2>
+                    <p class="text-stone-400 text-lg leading-relaxed mb-10">From high-stakes board meetings to grand seminars, our conference facilities provide the quiet prestige and technical tools required for your success.</p>
+                    <ul class="space-y-4 text-[10px] tracking-widest font-bold">
+                        <li class="flex items-center gap-4 text-gold"><div class="w-8 h-px bg-gold"></div> ULTRA-FAST WI-FI</li>
+                        <li class="flex items-center gap-4 text-gold"><div class="w-8 h-px bg-gold"></div> MODERN AUDIO-VISUAL</li>
+                    </ul>
+                </div>
+                <div class="md:col-span-7 reveal img-container">
+                    <img src="img/conference room.JPG" class="w-full shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dining" class="py-40 bg-white">
+        <div class="max-w-5xl mx-auto text-center reveal px-6">
+            <h2 class="text-6xl italic mb-16">The Dining Room</h2>
+            <div class="img-container mb-12">
+                <img src="img/restaurant.JPG" class="w-full h-[600px] object-cover shadow-2xl">
+            </div>
+            <p class="text-stone-500 text-xl font-serif italic max-w-2xl mx-auto">"A curated culinary experience where traditional flavors meet modern presentation."</p>
+        </div>
+    </section>
+
+    <section class="py-40 bg-stone-50 px-10">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
+            <div class="reveal img-container">
+                <img src="img/hotel reservation.JPG" class="w-full shadow-lg">
+            </div>
+            <div class="reveal">
+                <h2 class="text-5xl italic mb-8">At Your Service</h2>
+                <p class="text-stone-500 leading-loose mb-10">Our dedicated reservation and concierge team is available around the clock to ensure your stay is tailored to your exact preferences. From local tours to personal requests, we handle every detail with discretion.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-40 bg-white px-10">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-32">
+            <div class="reveal">
+                <h2 class="text-7xl italic mb-10">Inquire.</h2>
+                <p class="text-stone-400 mb-12">Please fill out the form below for availability and corporate bookings.</p>
+                <div class="space-y-6 text-stone-900 font-serif italic text-xl">
+                    <p>+255 000 000 000</p>
+                    <p>hello@kilolehotel.com</p>
+                </div>
+            </div>
+            <form class="space-y-8 reveal">
+                <input type="text" placeholder="YOUR NAME" class="w-full border-b border-stone-200 py-4 text-[10px] tracking-widest outline-none focus:border-gold transition">
+                <input type="email" placeholder="EMAIL" class="w-full border-b border-stone-200 py-4 text-[10px] tracking-widest outline-none focus:border-gold transition">
+                <textarea rows="4" placeholder="HOW CAN WE ASSIST YOU?" class="w-full border-b border-stone-200 py-4 text-[10px] tracking-widest outline-none focus:border-gold transition"></textarea>
+                <button class="bg-stone-900 text-white px-12 py-5 text-[10px] tracking-[0.4em] font-bold hover:bg-gold transition">SEND REQUEST</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-20 bg-white border-t border-stone-100 text-center">
+        <div class="text-[10px] tracking-[0.6em] text-stone-300 font-bold uppercase">Kilole Hotel & Residences</div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if(window.scrollY > 80) nav.classList.add('nav-scrolled');
+            else nav.classList.remove('nav-scrolled');
+        });
+    </script>
+</body>
+</html>
