@@ -174,12 +174,44 @@
                     <p>hello@kilolehotel.com</p>
                 </div>
             </div>
-            <form class="space-y-8 reveal">
-                <input type="text" placeholder="YOUR NAME" class="w-full border-b border-stone-200 py-4 text-[10px] tracking-widest outline-none focus:border-gold transition">
-                <input type="email" placeholder="EMAIL" class="w-full border-b border-stone-200 py-4 text-[10px] tracking-widest outline-none focus:border-gold transition">
-                <textarea rows="4" placeholder="HOW CAN WE ASSIST YOU?" class="w-full border-b border-stone-200 py-4 text-[10px] tracking-widest outline-none focus:border-gold transition"></textarea>
-                <button class="bg-stone-900 text-white px-12 py-5 text-[10px] tracking-[0.4em] font-bold hover:bg-gold transition">SEND REQUEST</button>
-            </form>
+<form 
+    action="https://formspree.io/f/maqdjzvd" 
+    method="POST" 
+    class="space-y-8 reveal bg-white"
+>
+    <div class="relative">
+        <input type="text" name="name" required
+            placeholder="YOUR NAME" 
+            class="w-full border-b border-stone-200 py-4 text-[10px] tracking-widest outline-none focus:border-gold transition uppercase">
+    </div>
+
+    <div class="relative">
+        <input type="email" name="email" required
+            placeholder="EMAIL ADDRESS" 
+            class="w-full border-b border-stone-200 py-4 text-[10px] tracking-widest outline-none focus:border-gold transition uppercase">
+    </div>
+
+    <div class="relative">
+        <select name="interest" 
+            class="w-full border-b border-stone-200 py-4 text-[10px] tracking-widest outline-none focus:border-gold transition uppercase bg-transparent">
+            <option value="room-booking">Room Reservation</option>
+            <option value="conference">Corporate Event</option>
+            <option value="dining">Private Dining</option>
+            <option value="other">Other Inquiry</option>
+        </select>
+    </div>
+
+    <div class="relative">
+        <textarea name="message" rows="4" required
+            placeholder="HOW CAN WE ASSIST YOU?" 
+            class="w-full border-b border-stone-200 py-4 text-[10px] tracking-widest outline-none focus:border-gold transition uppercase"></textarea>
+    </div>
+
+    <button type="submit" 
+        class="bg-stone-900 text-white px-12 py-5 text-[10px] tracking-[0.4em] font-bold hover:bg-gold transition w-full md:w-auto">
+        SEND REQUEST
+    </button>
+</form>
         </div>
     </section>
 
@@ -218,4 +250,5 @@
     </script>
 </body>
 </html>
+
 
