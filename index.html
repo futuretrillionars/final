@@ -15,150 +15,205 @@
         .reveal { opacity: 0; transform: translateY(40px); transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
         .nav-scrolled { background: white !important; padding: 1rem 2.5rem !important; box-shadow: 0 4px 20px rgba(0,0,0,0.08); color: black !important; }
-        .nav-scrolled a { color: black !important; }
+        .nav-scrolled .nav-link { color: black !important; }
+        .nav-scrolled .menu-icon { color: black !important; }
+        .img-container { overflow: hidden; position: relative; }
+        .img-container img { transition: transform 1.5s ease; width: 100%; height: 100%; object-fit: cover; }
+        .img-container:hover img { transform: scale(1.05); }
+        #mobile-menu { transition: transform 0.4s ease-in-out; }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
-    <nav id="navbar" class="fixed w-full z-[100] px-10 py-8 flex justify-between items-center transition-all duration-500 text-white">
+    <nav id="navbar" class="fixed w-full z-[100] px-6 md:px-10 py-8 flex justify-between items-center transition-all duration-500 text-white">
         <div class="flex items-center gap-4">
-            <img src="images/logo.JPG" alt="Logo" class="h-12 w-auto object-contain">
-            <div class="text-2xl tracking-[0.3em] font-light hidden md:block">KILOLE</div>
+            <img src="logo.JPG" alt="Kilole Logo" class="h-10 md:h-12 w-auto object-contain">
+            <div class="text-xl md:text-2xl tracking-[0.3em] font-light">KILOLE</div>
         </div>
+        
         <div class="hidden lg:flex space-x-8 text-[9px] uppercase tracking-[0.2em] font-bold">
-            <a href="#home">The Estate</a>
-            <a href="#about">Gardens</a>
-            <a href="#rooms">Residences</a>
-            <a href="#conference">Meetings</a>
-            <a href="#dining">Dining</a>
-            <a href="#contact">Booking</a>
+            <a href="#home" class="nav-link hover:text-gold transition">The Estate</a>
+            <a href="#about" class="nav-link hover:text-gold transition">Our Gardens</a>
+            <a href="#rooms" class="nav-link hover:text-gold transition">Residences</a>
+            <a href="#conference" class="nav-link hover:text-gold transition">Events</a>
+            <a href="#dining" class="nav-link hover:text-gold transition">Dining</a>
         </div>
-        <a href="#contact" class="border border-white/40 px-8 py-3 text-[10px] uppercase tracking-widest hover:bg-gold transition-all">Inquire</a>
+
+        <div class="flex items-center gap-6">
+            <a href="#contact" class="hidden sm:block border border-white/40 px-6 py-2 md:px-8 md:py-3 text-[10px] uppercase tracking-widest hover:bg-gold hover:border-gold transition-all">Inquire</a>
+            <button id="menu-toggle" class="lg:hidden menu-icon"><i data-lucide="menu"></i></button>
+        </div>
     </nav>
 
+    <div id="mobile-menu" class="fixed inset-0 bg-stone-900 z-[110] translate-x-full flex flex-col items-center justify-center space-y-8 text-white text-center">
+        <button id="menu-close" class="absolute top-10 right-10"><i data-lucide="x" class="w-8 h-8"></i></button>
+        <a href="#home" class="text-2xl serif italic">The Estate</a>
+        <a href="#about" class="text-2xl serif italic">Our Gardens</a>
+        <a href="#rooms" class="text-2xl serif italic">Residences</a>
+        <a href="#conference" class="text-2xl serif italic">Events</a>
+        <a href="#dining" class="text-2xl serif italic">Dining</a>
+        <a href="#contact" class="bg-gold px-10 py-4 text-[10px] tracking-widest uppercase mt-4">Inquire Now</a>
+    </div>
+
     <section id="home" class="relative h-screen flex items-center justify-center">
-        <img src="images/front%20pic.JPG" class="absolute inset-0 w-full h-full object-cover brightness-[0.45]">
+        <img src="front pic.JPG" class="absolute inset-0 w-full h-full object-cover brightness-[0.45]">
         <div class="relative text-center text-white px-4">
-            <span class="uppercase tracking-[0.8em] text-[10px] mb-8 block reveal">Mediterranean Excellence</span>
-            <h1 class="text-6xl md:text-[110px] mb-8 italic font-light leading-none reveal">Pure Elegance.</h1>
+            <span class="uppercase tracking-[0.8em] text-[10px] mb-8 block reveal">Now Open</span>
+            <h1 class="text-5xl md:text-[120px] mb-8 italic font-light leading-none reveal">Pure Elegance.</h1>
             <p class="text-[10px] uppercase tracking-[0.4em] reveal">Kilole Hotel & Residences</p>
         </div>
     </section>
 
-    <section id="about" class="py-40 px-10 bg-white">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
+    <section id="about" class="py-32 md:py-40 px-6 md:px-10 bg-white">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-center">
             <div class="reveal">
-                <span class="text-gold text-xs font-bold tracking-widest uppercase mb-4 block">Our Atmosphere</span>
-                <h2 class="text-5xl md:text-7xl mb-10 italic">Urban Nature. <br>Inner Peace.</h2>
-                <p class="text-stone-500 text-lg leading-[2.2] font-light mb-8">
-                    Our expansive green areas are the heart of Kilole Hotel. Designed as a botanical sanctuary within the city, these gardens offer guests a tranquil space to unwind amidst lush surroundings.
+                <span class="text-gold text-xs font-bold tracking-widest uppercase mb-4 block">The Atmosphere</span>
+                <h2 class="text-5xl md:text-7xl mb-8 md:mb-10 italic">A Breath of <br>Fresh Air.</h2>
+                <p class="text-stone-500 text-lg leading-[2] font-light mb-8">
+                    Our expansive green areas are the heart of Kilole Hotel. Designed as a botanical sanctuary within the city, these gardens offer guests a tranquil space to walk, meditate, or enjoy an afternoon tea amidst lush surroundings.
                 </p>
             </div>
-            <div class="reveal shadow-2xl">
-                <img src="images/green%20area.JPG" alt="Gardens" class="w-full">
+            <div class="img-container reveal shadow-2xl aspect-square md:aspect-auto h-[500px]">
+                <img src="green area.JPG" alt="Botanical Gardens">
             </div>
         </div>
     </section>
 
-    <section id="rooms" class="py-40 bg-stone-50 px-6">
+    <section id="rooms" class="py-32 md:py-40 bg-stone-50 px-6">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-24 reveal">
-                <h2 class="text-6xl italic">The Residences</h2>
+            <div class="text-center mb-16 md:mb-24 reveal">
+                <h2 class="text-5xl md:text-6xl italic">Stay in Style</h2>
             </div>
-            <div class="grid md:grid-cols-2 gap-12 mb-20">
-                <div class="reveal">
-                    <img src="images/room%202.JPG" class="w-full aspect-[4/3] object-cover shadow-lg mb-6">
-                    <h3 class="text-2xl italic mb-2">The Executive Suite</h3>
-                    <p class="text-stone-400 text-sm">Sophisticated design meets modern comfort.</p>
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 mb-20">
+                <div class="reveal img-container group">
+                    <img src="room 2.JPG" alt="Executive Suite" class="h-[600px]">
+                    <div class="py-8 bg-white px-6 shadow-sm">
+                        <h3 class="text-2xl italic mb-2">The Executive Suite</h3>
+                        <p class="text-stone-400 text-sm tracking-wide">Sophisticated design meets modern comfort.</p>
+                    </div>
                 </div>
-                <div class="reveal" style="transition-delay: 200ms;">
-                    <img src="images/room%203.JPG" class="w-full aspect-[4/3] object-cover shadow-lg mb-6">
-                    <h3 class="text-2xl italic mb-2">Deluxe Sanctuary</h3>
-                    <p class="text-stone-400 text-sm">Designed for ultimate rest and relaxation.</p>
+                <div class="reveal img-container group" style="transition-delay: 200ms;">
+                    <img src="room 3.JPG" alt="Deluxe Twin Room" class="h-[600px]">
+                    <div class="py-8 bg-white px-6 shadow-sm">
+                        <h3 class="text-2xl italic mb-2">Deluxe Twin Room</h3>
+                        <p class="text-stone-400 text-sm tracking-wide">Perfect for families and long-term stays.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-40 bg-white px-10 border-y border-stone-100">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
-            <div class="reveal order-2 md:order-1">
-                <img src="images/bathroom.JPG" class="w-full shadow-2xl">
+    <section class="py-32 md:py-40 bg-white px-6 md:px-10">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 md:gap-20 items-center">
+            <div class="reveal img-container order-2 md:order-1 h-[600px]">
+                <img src="bathroom.JPG" alt="Luxury Bathroom" class="shadow-2xl">
             </div>
             <div class="reveal order-1 md:order-2">
                 <h2 class="text-5xl italic mb-8">Refined Details</h2>
-                <p class="text-stone-500 leading-loose mb-10">Luxury is found in the details. Our bathrooms feature premium finishes and spa-inspired amenities, providing a sanctuary of rejuvenation.</p>
+                <p class="text-stone-500 leading-loose mb-10 text-lg">Luxury is found in the details. Our bathrooms feature premium stone finishes and spa-inspired amenities, providing a sanctuary of rejuvenation after a long day.</p>
                 <div class="w-20 h-px bg-gold"></div>
             </div>
         </div>
     </section>
 
-    <section id="conference" class="py-40 bg-[#121212] text-white px-10">
+    <section id="conference" class="py-32 md:py-40 bg-[#121212] text-white px-6 md:px-10">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-12 gap-12 items-center">
                 <div class="md:col-span-5 reveal">
-                    <h2 class="text-6xl italic mb-8">Professional <br>Events.</h2>
-                    <p class="text-stone-400 text-lg leading-relaxed mb-10">Our state-of-the-art conference facilities provide the quiet prestige and technical tools required for your business success.</p>
+                    <h2 class="text-5xl md:text-6xl italic mb-8">Corporate <br>Mastery.</h2>
+                    <p class="text-stone-400 text-lg leading-relaxed mb-10">From high-stakes board meetings to grand seminars, our conference facilities provide the quiet prestige and technical tools required for your success.</p>
+                    <ul class="space-y-4 text-[10px] tracking-widest font-bold">
+                        <li class="flex items-center gap-4 text-gold"><div class="w-8 h-px bg-gold"></div> ULTRA-FAST WI-FI</li>
+                        <li class="flex items-center gap-4 text-gold"><div class="w-8 h-px bg-gold"></div> MODERN AUDIO-VISUAL</li>
+                    </ul>
                 </div>
-                <div class="md:col-span-7 reveal">
-                    <img src="images/conference%20room.JPG" class="w-full shadow-2xl">
+                <div class="md:col-span-7 reveal img-container h-[500px]">
+                    <img src="conference room.JPG" alt="Conference Facility" class="shadow-2xl">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="dining" class="py-40 bg-white">
+    <section id="dining" class="py-32 md:py-40 bg-white">
         <div class="max-w-5xl mx-auto text-center reveal px-6">
-            <h2 class="text-6xl italic mb-16">The Restaurant</h2>
-            <img src="images/restaurant.JPG" class="w-full h-[600px] object-cover shadow-2xl mb-12">
+            <h2 class="text-5xl md:text-6xl italic mb-12 md:mb-16">The Dining Room</h2>
+            <div class="img-container mb-12 h-[400px] md:h-[600px]">
+                <img src="restaurant.JPG" alt="Restaurant Interior" class="shadow-2xl">
+            </div>
             <p class="text-stone-500 text-xl font-serif italic max-w-2xl mx-auto">"A curated culinary experience where traditional flavors meet modern presentation."</p>
         </div>
     </section>
 
-    <section class="py-40 bg-stone-50 px-10">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
-            <div class="reveal">
-                <img src="images/hotel%20reservation.JPG" class="w-full shadow-lg">
+    <section class="py-32 md:py-40 bg-stone-50 px-6 md:px-10">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+            <div class="reveal img-container h-[500px]">
+                <img src="hotel reservation.JPG" alt="Concierge Desk" class="shadow-lg">
             </div>
             <div class="reveal">
-                <h2 class="text-5xl italic mb-8">Welcome Home</h2>
-                <p class="text-stone-500 leading-loose mb-10">Our dedicated reservation team is available 24/7 to ensure your stay is tailored to your exact preferences from the moment you arrive.</p>
+                <h2 class="text-5xl italic mb-8">At Your Service</h2>
+                <p class="text-stone-500 leading-loose mb-10 text-lg">Our dedicated reservation and concierge team is available around the clock to ensure your stay is tailored to your exact preferences. From local tours to personal requests, we handle every detail with discretion.</p>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-40 bg-white px-10">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-32">
+    <section id="contact" class="py-32 md:py-40 bg-white px-6 md:px-10">
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-20 lg:gap-32">
             <div class="reveal">
-                <h2 class="text-7xl italic mb-10">Begin Your <br>Experience.</h2>
+                <h2 class="text-6xl md:text-7xl italic mb-10">Inquire.</h2>
+                <p class="text-stone-400 mb-12 text-lg">Please fill out the form below for availability and corporate bookings.</p>
                 <div class="space-y-6 text-stone-900 font-serif italic text-xl">
-                    <p>Contact us for reservations and corporate inquiries.</p>
+                    <p>+255 000 000 000</p>
+                    <p>hello@kilolehotel.com</p>
                 </div>
             </div>
-            <form class="space-y-8 reveal">
-                <input type="text" placeholder="NAME" class="w-full border-b border-stone-200 py-4 text-[10px] tracking-widest outline-none focus:border-gold transition">
+            <form class="space-y-8 reveal bg-white">
+                <input type="text" placeholder="YOUR NAME" class="w-full border-b border-stone-200 py-4 text-[10px] tracking-widest outline-none focus:border-gold transition">
                 <input type="email" placeholder="EMAIL" class="w-full border-b border-stone-200 py-4 text-[10px] tracking-widest outline-none focus:border-gold transition">
                 <textarea rows="4" placeholder="HOW CAN WE ASSIST YOU?" class="w-full border-b border-stone-200 py-4 text-[10px] tracking-widest outline-none focus:border-gold transition"></textarea>
-                <button class="bg-stone-900 text-white px-12 py-5 text-[10px] tracking-[0.4em] font-bold hover:bg-gold transition">SEND INQUIRY</button>
+                <button type="submit" class="bg-stone-900 text-white px-12 py-5 text-[10px] tracking-[0.4em] font-bold hover:bg-gold transition w-full md:w-auto">SEND REQUEST</button>
             </form>
         </div>
     </section>
 
     <footer class="py-20 bg-white border-t border-stone-100 text-center">
-        <div class="text-[10px] tracking-[0.6em] text-stone-300 font-bold uppercase">Kilole Hotel & Residences</div>
+        <div class="text-[10px] tracking-[0.6em] text-stone-300 font-bold uppercase mb-4">Kilole Hotel & Residences</div>
+        <p class="text-[9px] text-stone-400">&copy; 2026 KILOLE LUXURY GROUP</p>
     </footer>
 
     <script>
         lucide.createIcons();
+
+        // Scroll Reveal
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         
+        // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             if(window.scrollY > 80) nav.classList.add('nav-scrolled');
             else nav.classList.remove('nav-scrolled');
+        });
+
+        // Mobile Menu Logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.style.transform = 'translateX(0)';
+        });
+
+        menuClose.addEventListener('click', () => {
+            mobileMenu.style.transform = 'translateX(100%)';
+        });
+
+        // Close menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.style.transform = 'translateX(100%)';
+            });
         });
     </script>
 </body>
